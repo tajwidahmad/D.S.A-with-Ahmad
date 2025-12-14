@@ -4,6 +4,7 @@ public class power {
     public static void main(String[] args) {
         // System.out.println(x_t_p(2, 10));
         System.out.println(optimzed_power(2, 5));
+        System.out.println("program execution completed");
         
     }
     // public static int x_t_p(int x, int n) {
