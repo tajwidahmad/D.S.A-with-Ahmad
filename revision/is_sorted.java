@@ -19,16 +19,28 @@ public class is_sorted {
     // first occurence...
     public static void main(String[] args) {
         int arr[]={3,4,6,8,2,6,1,5};
-        System.out.println(first_time(arr, 0, 6));
+        // System.out.println(first_time(arr, 0, 6));
+        System.out.println(last_occured(arr, 0, 6));
     }
-    public static int first_time(int arr[],int idx,int target) {
-        // base case
-        if (idx==arr.length-1) {
+    // public static int first_time(int arr[],int idx,int target) {
+    //     // base case
+    //     if (idx==arr.length-1) {
+    //         return -1;
+    //     }
+    //     if (arr[idx]==target) {
+    //         return idx;
+    //     }
+    //     return first_time(arr, idx+1, target);
+    // }
+    public static int last_occured(int arr[],int idx,int target) {
+        if (idx==arr.length) {
             return -1;
         }
-        if (arr[idx]==target) {
+        int flag=last_occured(arr, idx+1, target);
+        if (flag==-1 && arr[idx]==target) {
             return idx;
         }
-        return first_time(arr, idx+1, target);
+        return flag;
+        
     }
 }
